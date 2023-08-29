@@ -1,0 +1,367 @@
+/* Start Global Values */
+
+:root{
+    --main-color:#00b0ff;
+    --second-color:#ECEFF1;
+    --white:#fff;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+/* Qwitcher Grypen 700 400   Poppins   300 500 800*/
+body{
+    height: 99vh;
+    font-family: 'Poppins',sans-serif, cursive;
+    display: flex;
+    font-size: 15px;
+}
+
+@media (max-width: 767px){
+    body{
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 991px){
+    body{
+        font-size: 14px;
+    }
+}
+
+
+.container{
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+
+/* small devics media */
+@media (min-width: 768px){
+    .container{
+        width: 750px;
+    }
+}
+
+/* mediam devics media */
+@media (min-width: 992px){
+    .container{
+        width: 970px;
+    }
+}
+
+
+/* lage devics media */
+@media (min-width: 1200px){
+    .container{
+        width: 1170px;
+    }
+}
+
+ul{
+    list-style: none;
+}
+
+.active{
+    background: var(--main-color);
+    color: var(--white);
+    border-bottom: none;
+    border-radius: 5px;
+}
+
+.active a,.active span{
+    color: var(--white) !important;
+}
+
+/* End Global Values */
+
+/* Start Side Bar */
+.side-menu{
+    overflow-y: scroll;
+    height: 100%;
+    width: 300px;
+    padding: 20px;
+}
+
+.side-menu .search-bar{
+    display: flex;
+    padding-bottom: 50px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+    border-bottom: 1px solid #ccc;
+}
+
+.side-menu .search-bar input{
+    padding: 15px 0px 15px 10px;
+    background: var(--second-color);
+    font-size: 1em;
+    border: none;
+    border-radius: 25px;
+}
+
+.side-menu .search-bar input:focus{
+    outline: none;
+}
+
+.side-menu .search-bar i{
+    padding: 10px;
+    background: var(--main-color);
+    color: var(--white);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+
+.side-menu .users-holder{
+    display: grid;
+    grid-template-columns: minmax(250px,1fr);
+    gap: 10px;
+}
+
+@media (max-width: 767px){
+    .side-menu .users-holder{
+        grid-template-columns: minmax(150px,1fr);
+    }
+}
+
+.side-menu .users-holder .user{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.side-menu .users-holder .user .img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.side-menu .users-holder .user .img img{
+    width: 100%;
+    height: 100%;
+
+}
+
+.side-menu .users-holder .user .user-info{
+    flex-basis: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.side-menu .users-holder .user .user-info .user-details{
+        display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.side-menu .users-holder .user .user-info .user-details .user-name{
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: capitalize;
+    color: #000;
+    text-decoration: none;
+    transition: .5s;
+}
+
+.side-menu .users-holder .user .user-info .user-details .user-name:hover{
+    text-decoration: underline;
+}
+
+.side-menu .users-holder .user .user-info .user-details .date{
+    color: #777;
+}
+
+.side-menu .users-holder .user .user-info p{
+    font-weight: 300;
+}
+
+/* End Side Bar */
+
+/* start the main chat */
+.chat-holder{
+    width: calc(100% - 300px);
+}
+
+.chat-holder .to{
+    background: var(--second-color);
+    padding: 20px 50px;
+}
+
+.chat-holder .to .d{
+    color: #777;
+    font-size: 2em;
+}
+
+.chat-holder .to .d span{
+    color: #000 !important;
+}
+
+
+
+
+.chat-holder .container{
+    width: 100%;
+    height: calc(100% - 90px);
+    display: flex;
+    flex-direction: column-reverse;
+    padding-bottom: 20px;
+
+}
+
+
+.chat-holder .container .chat-input{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: 50px;
+    position: relative;
+}
+
+.chat-holder .container .chat-input i{
+    padding: 20px;
+    cursor: pointer;
+    border-radius: 10px 0 0 10px;
+    color: #ccc;
+    background: var(--second-color);
+}
+
+.chat-holder .container .chat-input input{
+    border: none;
+    width: 90%;
+    padding: 20px 0 20px 10px;
+    border-radius: 0 10px 10px 0;
+    background: var(--second-color);
+}
+
+.chat-holder .container .chat-input input:focus{
+    outline: none;
+}
+
+
+
+.chat-holder .container .chat-input::before{
+    font-family: "Font Awesome 6 Free";
+    content: "\f118";
+    position: absolute;
+    right: 100px;
+    font-weight: 800;
+    font-size: 1.9em;
+    cursor: pointer;
+    color: #777;
+
+}
+
+
+.chat-holder .container .chat-input::after{
+    font-family: "Font Awesome 5 Free";
+    content: "\f534";
+    position: absolute;
+    right: 60px;
+    font-weight: 500;
+    font-size: 1.9em;
+    cursor: pointer;
+    color: #777;
+
+}
+
+.chat-holder .container .messages{
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.chat-holder .container .messages .chat-of-user{
+    padding: 10px;
+    background: #777;
+    align-self: flex-end;
+    width: fit-content;
+    border-radius: 5px;
+    color: var(--white);
+    text-transform: capitalize;
+    position: relative;
+    margin-right: 20px;
+}
+.chat-holder .container .messages .chat-of-user::before{
+    content: "";
+    border: 15px solid;
+    border-color: transparent transparent transparent #777;
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+
+}
+
+
+
+.chat-holder .container .messages .chat-of-user-friend{
+    padding: 10px;
+    background: var(--main-color);
+    width: fit-content;
+    border-radius: 5px;
+    color: var(--white);
+    text-transform: capitalize;
+    position: relative;
+}
+
+.chat-holder .container .messages .chat-of-user-friend::before{
+    content: "";
+    border: 15px solid;
+    border-color: transparent var(--main-color) transparent transparent;
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+
+}
+
+
+.chat-holder .container .date-of-first-message{
+    align-self: center;
+    font-size: 2em;
+    text-transform: uppercase;
+    color: #777;
+    margin-bottom: 100px;
+    position: relative;
+}
+
+
+.chat-holder .container .date-of-first-message::before,
+.chat-holder .container .date-of-first-message::after{
+    content: "";
+    width: 50%;
+    height: 2px;
+    background: #777;
+    position: absolute;
+    top: 50%;
+    transform: translatey(50%);
+}
+
+.chat-holder .container .date-of-first-message::before{
+    left: -50%;
+}
+
+
+.chat-holder .container .date-of-first-message::after{
+    right: -52%;
+
+}
+
+
+
+
+
+
+/* end the main chat */
